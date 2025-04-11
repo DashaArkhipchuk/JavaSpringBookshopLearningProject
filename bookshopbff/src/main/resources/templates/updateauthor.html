@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Author Details Form</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../static/css/bookform.css">
+    <style>
+        textarea{
+        max-height: 600px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1 class="mt-5 mb-4">Author Details Form</h1>
+    <form method="post" th:action="@{/author/update}" th:object="${author}">
+        <input type="hidden" id="id" name="id" th:value="${a.id}"/>
+        <div class="form-group">
+            <label for="firstName">First Name:</label>
+            <input type="text" id="firstName" name="firstName" th:value="${a.firstName}" class="form-control" required>
+        </div>
+        <div class="form-group">
+            <label for="lastName">Last Name:</label>
+            <input type="text" id="lastName" name="lastName" th:value="${a.lastName}" class="form-control" required>
+        </div>
+        <div class="form-group">
+            <label for="biography">Biography:</label>
+            <textarea id="biography" name="biography" class="form-control auto-size" required
+                      th:text="${a.biography}"></textarea>
+        </div>
+        <div class="form-group">
+            <label for="activityYears">Activity Years:</label>
+            <input type="text" id="activityYears" name="activityYears" th:value="${a.activityYears}"
+                   class="form-control" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>
+
+<!-- Bootstrap JS (optional, only if needed) -->
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

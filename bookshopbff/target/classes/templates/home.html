@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Custom CSS -->
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+        .container {
+            padding-top: 50px;
+            text-align: center;
+        }
+        h1 {
+            margin-bottom: 50px;
+        }
+        .link-box {
+            margin-bottom: 30px;
+        }
+        .link-box img {
+            width: 500px;
+            height: auto;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            transition: transform 0.3s ease;
+        }
+        .link-box img:hover {
+            transform: scale(1.1);
+        }
+        .link-box a {
+            color: black;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Welcome to Our Bookshop</h1>
+<!--    <div th:if="${#authorization.expression('isAuthenticated()')}">-->
+<!--        <p>User is authenticated</p>-->
+<!--        <p>Welcome, <span th:text="${#authentication.principal.username}"></span></p>-->
+<!--        <p>User roles: <span th:text="${#authentication.authorities}"></span></p>-->
+<!--        &lt;!&ndash; Add authenticated user-specific content here &ndash;&gt;-->
+<!--        <a th:href="@{/logout}">Logout</a>-->
+<!--    </div>-->
+
+    <a th:href="@{/signin}">Sign In</a>
+
+    <div class="row">
+        <div class="col-md-6">
+            <div class="link-box">
+                <a th:href="@{/books}">
+                    <img src="https://picsum.photos/id/24/500" alt="Books">
+                    <h3>Explore Books</h3>
+                </a>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="link-box">
+                <a th:href="@{/authors}">
+                    <img src="https://picsum.photos/id/180/500" alt="Authors">
+                    <h3>Discover Authors</h3>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Bootstrap JS (optional, only if needed) -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

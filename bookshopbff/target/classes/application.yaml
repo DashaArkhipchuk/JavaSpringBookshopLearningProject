@@ -1,0 +1,41 @@
+spring:
+  application:
+    name:
+      bookshop-bff
+
+security:
+  app:
+    authentication:
+      cookie: "ud"
+
+server:
+  port: 8086
+
+eureka:
+  client:
+    enabled: true
+
+app:
+  api:
+    version:
+        bookshop: "/api/v1"
+    path:
+      home: "/"
+      book:
+        createBook: "/book/create"
+        deleteBook: "/book/delete"
+        deleteBooks: "/book/deleteByAuthor"
+        updateBook: "/book/update"
+        getBooks: "/books"
+        getBook: "/book"
+      author:
+        createAuthor: "/author/create"
+        getAuthors: "/authors"
+        getAuthorNames: "/author/names"
+        getAuthor: "/author"
+        updateAuthor: "/author/update"
+        deleteAuthor: "/author/delete"
+      user:
+        getUser: "/user"
+        createUser: "/user/create"
+        signup: "/signup"

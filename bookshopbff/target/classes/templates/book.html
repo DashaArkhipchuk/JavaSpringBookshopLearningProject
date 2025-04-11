@@ -1,0 +1,59 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Book Details</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../static/css/bookdetails.css">
+    <style>
+        /* Custom CSS */
+        body {
+            background-color: #f8f9fa;
+            padding-top: 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+        }
+        .page-title {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .book-details {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .book-title {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+        .book-info {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<h1 class="page-title">Book Details</h1>
+
+<div class="container">
+    <div class="book-details">
+        <h2 class="book-title" th:text="${book.title}"></h2>
+        <p class="book-info">Year of Publishing: <span th:text="${book.publishYear}"></span></p>
+        <p class="book-info">Genre: <span th:text="${book.genre}"></span></p>
+        <p class="book-info">Author: <span th:text="${book.author.firstName + ' ' + book.author.lastName}"></span></p>
+        <p class="book-info">Price: $<span th:text="${book.price}"></span></p>
+        <div class="text-center mt-3">
+            <a th:href="@{/books}" class="btn btn-secondary">Back to Books</a>
+        </div>
+    </div>
+</div>
+
+<!-- Bootstrap JS (optional, only if needed) -->
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
